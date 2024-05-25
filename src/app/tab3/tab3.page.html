@@ -1,17 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      MVVM
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card color="secondary">
+    <ion-card-header>
+      <h2>Завдання</h2>
+      
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>3. Розрахувати площу та висоту рівностороннього трикутника.</ion-item>
+    </ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card color="tertiary">
+    <ion-card-content>
+      <ion-input label="Сторона" labelPlacement="floating" #inputA class="f-f " type="number" value="3"></ion-input>
+      <!-- <ion-button type="submit" color="danger" expand="block"  (click) = "ras(inputA.value)">Створити трикутник</ion-button> -->
+      <ion-item color="transparent" lines="none">
+      <ion-label class="f-f">
+            Площа
+        </ion-label>
+        <ion-label class="f-f">
+            {{ras_S(inputA.value)}}
+      </ion-label>
+      <ion-label class="f-f">
+          Висота
+      </ion-label>
+      <ion-label class="f-f">
+          {{ras_H(inputA.value)}}
+      </ion-label>  
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

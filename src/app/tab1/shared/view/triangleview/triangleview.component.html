@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      MVC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <h2>Завдання</h2>
+      
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>3. Розрахувати площу та висоту рівностороннього трикутника.</ion-item>
+    </ion-card-content>
+  </ion-card>
+  <form [formGroup]="triagleForm" (ngSubmit)="add(triagleForm.value)">
+  <ion-card>
+    <ion-card-content>  
+      <ion-item>
+
+      <input id="a" label="Катет A:" labelPlacement="floating" type="number" 
+        min="1" max="20" 
+        formControlName="a">
+      </ion-item>
+      </ion-card-content>
+      <ion-button type="submit" color="warning" expand="block" [disabled]="!triagleForm.valid">Створити трикутник</ion-button>
+  </ion-card>
+  </form>
+  <ion-item *ngFor="let tr of  triangles;">
+    сторона = {{tr.a}}
+    площа = {{tr.s}}
+    висота = {{tr.h}}
+    
+    </ion-item>
+</ion-content>

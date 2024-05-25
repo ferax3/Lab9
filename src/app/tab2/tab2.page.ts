@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ITriangleView } from './view/ItriangleView';
+import { PresenterService } from './presenter/presenter.service';
+import { triangleView } from './view/triangleview';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
-
+  view!: ITriangleView;
+  constructor(private pr: PresenterService) {
+    this.view = new triangleView();
+  }
+  ras(a: any){
+    this.pr.loadTriangle(a, this.view)
+  }
 }
